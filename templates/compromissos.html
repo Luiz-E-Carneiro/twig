@@ -1,0 +1,36 @@
+{# templates/compromissos.html #}
+{% extends "_base.html" %}
+
+{% block conteudo %}
+Página de Compromissos
+
+<h3>Adicionar Compromissos</h3>
+<form action="compromissos_adc.php" method="post">
+    <input type="text" name="titulo" placeholder="Título do compromisso">
+    <input type="date" name="data">
+    <input type="submit" value="Adicionar">
+</form>
+
+<a href="compromissos.php?ordem=ord_alf">Ordenar por ordem alfabética</a>
+<br>
+<a href="compromissos.php?ordem=ord_dt">Ordenar por data</a>
+
+<h3>Minha lista de compras</h3>
+<ul>
+    {% for compromisso in compromissos %}
+        <li>
+            {% if compromisso.weekend == True %}
+                Final de Semana:
+            {% endif %}
+            
+            {{ compromisso.titulo }}
+            ---
+            {{ compromisso.data }} ||
+            <a href="compromissos_editar.php?id={{ compromisso.id }}">Editar</a>
+            |
+            <a href="compromissos_apagar.php?id={{ compromisso.id }}">X</a> ||
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
