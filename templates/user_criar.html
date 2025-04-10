@@ -1,0 +1,21 @@
+{# templates/index.html #}
+{% extends "_base.html" %}
+
+
+{% block conteudo %}
+<h2>{{ titulo }}</h2>
+
+<form method="post" action="user_criar.php" accept-charset="UTF-8">
+    <h3><label for="login">Login</label></h3>
+    <input id="login" type="text" name="login"
+        value="">
+
+    <h3><label for="senha">Senha:</label></h3>
+    <input id="senha" type="senha" name="senha">
+
+    {% if errorMessage is defined %}
+        <p>{{ errorMessage }}</p>
+    {% endif %}
+</form>
+
+{% endblock %}
