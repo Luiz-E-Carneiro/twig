@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Abr-2025 às 16:32
+-- Tempo de geração: 17-Abr-2025 às 16:29
 -- Versão do servidor: 10.4.32-MariaDB
 -- versão do PHP: 8.2.12
 
@@ -37,7 +37,7 @@ CREATE TABLE `compras` (
 --
 
 INSERT INTO `compras` (`id`, `item`) VALUES
-(1, 'Abacaxi, the bestsfsafdfgdsgsdds'),
+(1, 'Abacaxi? O que é?'),
 (8, 'Abacaxi, the best');
 
 -- --------------------------------------------------------
@@ -77,6 +77,13 @@ CREATE TABLE `usuarios` (
   `login` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`usuario_id`, `login`, `senha`) VALUES
+(1, 'Luiz', '$2y$10$low94/phQom7RilObVXGAuhlSnrv8ZmNnPNrNcpoEb/sQYzPCHzni');
 
 --
 -- Índices para tabelas despejadas
@@ -121,7 +128,7 @@ ALTER TABLE `compromissos`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
