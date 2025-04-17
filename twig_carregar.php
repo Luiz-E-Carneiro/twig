@@ -10,10 +10,6 @@ $loader = new \Twig\Loader\FilesystemLoader('./templates');
 // Criar o objeto do Twig
 $twig = new \Twig\Environment($loader);
 
-session_start();
-
-// if (!isset($_SESSION['user'])) {
-
-//     header('location:login.php');
-        
-// }
+if(!isset($_SESSION)){
+    session_start();
+}

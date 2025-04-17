@@ -2,6 +2,7 @@
 require_once('twig_carregar.php');
 require('inc/banco.php');
 
+require_once('login_verify.php');
 
 require_once('vendor/autoload.php');
 date_default_timezone_set('America/Sao_Paulo');
@@ -38,4 +39,5 @@ unset($compr);
 echo $twig->render('compromissos.html', [
     'titulo' => 'Compromissos',
     'compromissos' => $compromissos,
+    'user'=> $_SESSION['user']
 ]);

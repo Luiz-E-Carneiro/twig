@@ -12,12 +12,18 @@
     {% if titulo %}
     <h2>{{ titulo }}</h2>
     {% endif %}
+    
+    {% if user %}
+    <h4>Olá, <i>{{ user }}</i>!</h4>
+    {% endif %}
 
     <hr>
     <a href="index.php">Inicial</a> |
     <a href="compras.php">Compras</a> |
     <a href="horario.php">Horário</a> |
-    <a href="compromissos.php">Compromissos</a>
+    <a href="compromissos.php">Compromissos</a>|
+    <a href="password_request.php">Trocar de senha</a>||
+    <a href="logout.php">Logout</a>||
     <hr>
 
     {% block conteudo %}{% endblock %}
